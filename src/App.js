@@ -1,25 +1,20 @@
-import React from 'react'
-import './App.css'
-import Homepage from './pages/homepage/homepage.component'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Shop from './pages/shop/shop.component'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-const HatsPage = (props) =>{
-  console.log(props)
-  return (<div>
-    <h1>HATS PAge</h1>
-  </div>)
-}
+import './App.css';
+
+import HomePage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shop.component.jsx';
+import Header from './components/header/header.component.jsx';
+
 function App() {
   return (
     <div>
-    <Router>
-     <Switch>
-        <Route exact path='/' component={Homepage} /> 
-        <Route exact path='/shop' component={Shop} />
+      <Header />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/shop' component={ShopPage} />
       </Switch>
-    </Router>
-      
     </div>
   );
 }
